@@ -3,6 +3,7 @@ package org.powerbot.script.rt4;
 import org.powerbot.bot.rt4.*;
 import org.powerbot.bot.rt4.client.Client;
 import org.powerbot.script.*;
+import org.powerbot.script.rt4.webwalk.WebWalking;
 
 import java.util.List;
 
@@ -33,6 +34,7 @@ public class ClientContext extends org.powerbot.script.ClientContext<Client> {
 	public final Worlds worlds;
 	public final Projectiles projectiles;
 	public final Components components;
+	public final WebWalking webWalking;
 
 	private ClientContext(final Bot<ClientContext> bot) {
 		super(bot);
@@ -67,6 +69,7 @@ public class ClientContext extends org.powerbot.script.ClientContext<Client> {
 		worlds = new Worlds(this);
 		projectiles = new Projectiles(this);
 		components = new Components(this);
+		webWalking = new WebWalking(this);
 	}
 
 	/**
@@ -99,6 +102,7 @@ public class ClientContext extends org.powerbot.script.ClientContext<Client> {
 		worlds = ctx.worlds;
 		projectiles = ctx.projectiles;
 		components = ctx.components;
+		webWalking = ctx.webWalking;
 	}
 
 	/**
